@@ -7,7 +7,7 @@
 Todd Johnson is a college freshman at New York University. He wants to stay up to date with the latest global news and be cognizant of what is going on outside of the campus bubble. He feels it extremely important to be well-versed in political knowledge and current news in order to be able to maintain mature conversations/debates with his peers. His primary medium of news consumption is an iPhone, and he reaches for the NYT, WSJ, and Apple News apps. An avid sports fan, Todd prefers to use the ESPN app for all sports news.
 
 **Pain Points**
-* There is so much sheer content that is published, making it increasingly difficult to sift through the articles and identify what is truly worth reading. For instance, a lot of headlines have to do with Trump this, Trump that – but which stories are truly relevant and unbiased?
+* There is so much content that is published, making it increasingly difficult to sift through the articles and identify what is truly worth reading. For instance, a lot of headlines have to do with Trump this, Trump that – but it's difficult to determine which stories are truly relevant and unbiased?
 * Once a key article is found, it is often multiple paragraphs long and takes a long time to read and absorb; writing is often dry and overly didactic, resulting in difficult-to-follow news pieces whose numerous details obfuscate the main topic of the headline.
 	* During the time spent reading a long news story, Todd may inevitably become distracted by a notification popup on his phone.
 * The “filter” functionality in Apple News still yields a seemingly endless stream of content, much of which is irrelevant to Todd. This ranges from pop culture content to cooking recipes.
