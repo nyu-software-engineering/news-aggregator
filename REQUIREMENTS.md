@@ -2,13 +2,22 @@
 
 ## Stakeholder Interviews
 ### Stakeholder/Investor Questions
-
+* 
 
 ### User Questions
-[] What are your pain points when trying to read news online today? 
-[] What are the news websites that you visit most frequently?
-[] Do you typically read multiple news websites in a single session?
-[] How would you prioritize these features: [list features]?
+* What are your pain points when trying to read news online today? 
+* What are the news websites that you visit most frequently?
+* Do you typically read multiple news websites in a single session?
+* Are there specific sections you focus on?
+* How would you prioritize these features?
+	* search functionality
+	* filter functionality
+	* summarize top articles with a descriptive blurb
+	* filter out duplicate articles
+	* ability to choose from which sites to aggregate news
+	* display headlines of top news articles
+	* modern GUI
+
 
 ## End-user Observation
 ### Persona 1: College Student
