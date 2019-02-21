@@ -1,6 +1,6 @@
 # News Aggregator
 
-We are building an online news content aggregation system intended to pull in RSS feeds from various different news sources and store/index it for easy access to the end user. Examples of news sources can be tech journals like TechCrunch, political and current events news sites such as the New York Times, and sports journals such as ESPN. 
+News Aggregator is intended to pull in RSS feeds from various different news sources and store/index it for easy access to the end user. Examples of news sources can be tech journals like TechCrunch, political and current events news sites such as the New York Times, and sports journals such as ESPN. 
 
 The application is intended to help the average person in organize and access news content in a better way - and can have many more specific use cases. For example, a reader interested in politics and can subscribe to feeds from both left and right leaning news sources to prevent information bias. Another reader interested in gaming can subscribe to tech journals and keep up with the latest releases and products. These are just a few of the many possibilities.
 
@@ -13,3 +13,7 @@ From the perspective of the end user, the service will list available news sourc
 [Click here](https://github.com/nyu-software-engineering/news-aggregator/blob/master/CONTRIBUTING.md) for contributing document
 
 ## Contributors
+Arushi Gupta - ag5054@nyu.edu
+Leon Hou - lh1945@nyu.edu
+Claudia Jiang - cdj273@nyu.edu
+Justin Moroz - morozj01@nyu.edu
