@@ -2,7 +2,11 @@
 
 ## Stakeholder Interviews
 ### Stakeholder/Investor Questions
-* 
+* What is your top concern with the proposal?
+* How often are you looking to meet and check in with us?
+* How would you like to be updated on project progress?
+* Have you seen other proposals/applications similar to this one and if so what advice can you give so that we can competitively differentiate ourselves?
+* Are there other stakeholders you would recommend us contact?
 
 ### User Questions
 * What are your pain points when trying to read news online today? 
@@ -17,7 +21,6 @@
 	* ability to choose from which sites to aggregate news
 	* display headlines of top news articles
 	* modern GUI
-
 
 ## End-user Observation
 ### Persona 1: College Student
