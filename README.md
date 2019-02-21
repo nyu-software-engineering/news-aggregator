@@ -1,6 +1,6 @@
 # News Aggregator
 
-News Aggregator is intended to pull in RSS feeds from various different news sources and store/index it for easy access to the end user. Examples of news sources can be tech journals like TechCrunch, political and current events news sites such as the New York Times, and sports journals such as ESPN. 
+**News Aggregator** is intended to pull in RSS feeds from various different news sources and store/index it for easy access to the end user. Examples of news sources can be tech journals like [TechCrunch](https://techcrunch.com/), political and current events news sites such as [The New York Times](https://www.nytimes.com/), and sports journals such as [ESPN](http://www.espn.com/). 
 
 The application is intended to help the average person as well as industry professionals organize and access news content in a better way. Specific use cases include a reader interested in politics who can subscribe to feeds from both left and right leaning news sources to prevent information bias. Another reader interested in gaming can subscribe to tech journals and keep up with the latest releases and products. A venture capital analyst can aggregate all news related to prospective companies. These are just a few of the many possibilities.
 
