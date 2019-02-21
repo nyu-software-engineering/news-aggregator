@@ -1,6 +1,14 @@
 # Requirements
 
 ## Stakeholder Interviews
+**Stakeholder/Investor Questions**
+* 
+
+**User Questions**
+* What are your pain points when trying to read news online today? 
+* What are the news websites that you visit most frequently?
+* Do you typically read multiple news websites in a single session?
+* How would you prioritize these features: [list features]?
 
 ## End-user Observation
 ### Persona 1: College Student
