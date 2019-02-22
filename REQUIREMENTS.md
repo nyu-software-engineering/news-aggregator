@@ -60,3 +60,4 @@ Jeffrey Bearden is an analyst at Hercules Capital, a venture debt lending compan
 ## Use Cases
 
 ## Domain Modeling
+![Here](/domain_model.PNG?raw=true "Domain Model")
