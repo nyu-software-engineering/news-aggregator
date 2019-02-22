@@ -58,6 +58,44 @@ Jeffrey Bearden is an analyst at Hercules Capital, a venture debt lending compan
 
 
 ## Use Cases
+![Use Case Diagram](use-case-diagram.png)
+
+1. **Title:** Register account
+    - **Actor:** User
+    - **Scenario:** The user registers new account with a username and password, and can log in to see personal news feed subscriptions.
+
+2. **Title:** Subscribe to news feeds
+    - **Actor:** User
+    - **Scenario:** The user can choose from existing suggested news feeds, or enter their own news sources with feeds. These feeds are all visible to the user separated by category/genre. The user can view the articles from each feed. 
+
+3. **Title:** Search for articles
+    - **Actor:** User
+    - **Scenario:** The user can search for articles in their news feeds by keyword or subject, and then view them 
+    
+4. **Title:** Comment on articles
+    - **Actor:** User
+    - **Scenario:** The user can comment on articles after reading them.
+    
+5. **Title:** Manage user accounts
+    - **Actor:** Developer
+    - **Scenario:** The developer stores the unique user accounts and their news feed subscriptions.
+    
+6. **Title:** Display top news articles
+    - **Actor:** Developer
+    - **Scenario:** The developer displays trending news articles to the user. These trending news articles are summarized with a descriptive blurb.
+
+7. **Title:** Filter out similar articles
+    - **Actor:** Developer
+    - **Scenario:** The developer filters out articles with very similar content when the user searches for articles.
+
+8. **Title:** Favorite articles
+    - **Actor:** User
+    - **Scenario:** The user can favorite articles that they like and view them later. 
+    
+9. **Title:** Recommend similar news sources
+    - **Actor:** Developer
+    - **Scenario:** The developer uses data from the user’s favorites and subscriptions to recommend similar news feeds to them.
+
 
 ## Domain Modeling
 ![Here](/domain_model.PNG?raw=true "Domain Model")
