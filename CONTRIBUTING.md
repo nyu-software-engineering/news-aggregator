@@ -6,15 +6,17 @@ team member, and when contributing in a way likely to overlap with another team 
 ## Repo Commit Process
 
 1. Ensure that node_modules folder, other dependencies are not commited with application code.  
-2. Ensure that your commit will not lead to any merge conflicts with other team members work
-2. Inform the team over slack that are making a commit. 
-3. Include a detailed commit message. 
+2. Ensure that your commit will not lead to any merge conflicts with other team members work.
+3. Inform the team over slack that you are making a commit. 
+4. Include a detailed commit message. 
+5. Ensure that you close the relevant issues addressed by the commit.
 
 ## Code of Conduct
 * All team members are to be treated with respect. Any conflicts among the team should be escalated in the following order: 
     * First consult the scrum master
     * Then, if the issue is still not resolved - consult the tutor (wkp219@nyu.edu)
     * Finally, if the issue has still not been resolved - consult the Professor (ab1258@nyu.edu)
+    
 ### Our Pledge
 
 In the interest of fostering an open and welcoming environment, we as
@@ -45,7 +47,6 @@ advances
   address, without explicit permission
 * Other conduct which could reasonably be considered inappropriate in a
   professional setting
-
 
 ### Enforcement
 
