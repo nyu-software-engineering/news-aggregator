@@ -1,0 +1,26 @@
+{
+  "name": "news-aggregator",
+  "version": "1.0.0",
+  "description": "News Feed Project for Agile Software Development ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyu-software-engineering/news-aggregator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nyu-software-engineering/news-aggregator/issues"
+  },
+  "homepage": "https://github.com/nyu-software-engineering/news-aggregator#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2"
+  }
+}
