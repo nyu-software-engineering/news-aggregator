@@ -21,7 +21,8 @@
     "express": "^4.16.4",
     "password-validator": "^4.1.1",
     "prompt": "^1.0.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "chai": "^4.2.0",
