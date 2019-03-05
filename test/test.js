@@ -1,4 +1,4 @@
-const validatePswd = require('../userPswd/validatePswd.js');
+const validatePswd = require('../src/validatePswd.js');
 const validateUsername = require('../src/validateUsername.js')
 const parseRss = require('../src/rss-reader.js');
 const assert = require('assert');
