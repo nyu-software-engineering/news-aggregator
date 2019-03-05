@@ -19,5 +19,7 @@ module.exports = {
       </item>
     </channel>
     </rss>"
-    </root>`
+    </root>`,
+
+    testBlank : ``
 }
