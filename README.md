@@ -13,9 +13,9 @@ From the perspective of the end user, the service will list available news sourc
 [Click here](https://github.com/nyu-software-engineering/news-aggregator/blob/master/CONTRIBUTING.md) for contributing document
 
 ## Unit Tests
-Unit tests are compiled [here](https://github.com/nyu-software-engineering/news-aggregator/blob/master/test/test.js) Run the following scripts:
-* npm test
-* npm run test-with-coverage
+Unit tests are compiled [here](https://github.com/nyu-software-engineering/news-aggregator/blob/master/test/test.js). Run the following scripts:
+<code>npm test</code>
+<code>npm run test-with-coverage</code>
 
 ## Contributors
 * Arushi Gupta - ag5054@nyu.edu
