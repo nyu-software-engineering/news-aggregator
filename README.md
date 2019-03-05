@@ -14,8 +14,8 @@ From the perspective of the end user, the service will list available news sourc
 
 ## Unit Tests
 Unit tests are compiled [here](https://github.com/nyu-software-engineering/news-aggregator/blob/master/test/test.js). Run the following scripts:
-`npm test`
-`npm run test-with-coverage`
+* `npm test`
+* `npm run test-with-coverage`
 
 ## Contributors
 * Arushi Gupta - ag5054@nyu.edu
