@@ -17,6 +17,9 @@ Unit tests are compiled [here](https://github.com/nyu-software-engineering/news-
 * `npm test`
 * `npm run test-with-coverage`
 
+## Status Badge
+[![Build Status](https://travis-ci.com/nyu-software-engineering/news-aggregator.svg?branch=master)](https://travis-ci.com/nyu-software-engineering/news-aggregator)
+
 ## Contributors
 * Arushi Gupta - ag5054@nyu.edu
 * Leon Hou - lh1945@nyu.edu
