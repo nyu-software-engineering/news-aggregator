@@ -3,6 +3,7 @@ node_js:
 - "9"
 
 notifications:
+  slack: nyu-agile-software:hTHCUOGLbb3Ioq083BjRuTTk
   email:
     recipients:
     - cdj273@nyu.edu
