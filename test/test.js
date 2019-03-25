@@ -53,3 +53,45 @@ describe("parseRss", function () {
     });
 });
 
+describe("testRssLink", function () {
+    it('Is able to parse the rss file', ()=>{
+        try {
+            const parsedObject = parseRss.parseRssObject(parseRss.testData);
+            //assert.pass("actual", "expected", "Error message")
+            assert.equal(parsedObject != null, true);
+        }
+        catch (e) {
+            console.log(e);
+            assert.fail("actual", "expected", e)
+        }
+    }); 
+
+    it('Is not able to parse nonexistent file', ()=>{
+        const parsedBlank = parseRss.parseRssObject(parseRss.testBlank);
+        assert.equal(parsedBlank, undefined || {} || null);
+/*
+        try {
+            const parsedBlank = parseRss.parseRssObject(parseRss.testBlank);
+            assert.fail(JSON.stringify(parsedBlank), undefined)
+        }
+        catch (e) {
+            console.log(e);
+            //assert.pass("actual", "expected", "Error message")
+            //done();
+            assert.equal(parsedBlank, undefined);
+        } */
+    }); 
+
+    const parsedObject = parseRss.parseRssObject(parseRss.testData).root;
+    const rss = Object.keys(parsedObject);
+    console.log(rss);
+    it('Correctly determines that file exists and is an rss', ()=>{
+        try {
+            const parsedObject = parseRss.parseRssObject(parseRss.testData);
+        }
+        catch (e) {
+            console.log(e);
+        }
+        assert.equal(parsedObject.channel.title._text,"TEST RSS");
+    }); 
+});
