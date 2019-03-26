@@ -3,9 +3,7 @@ node_js:
 - "9"
 
 notifications:
-  slack: nyu-agile-software:hTHCUOGLbb3Ioq083BjRuTTk
-    on_success: change
-    on_failure: always
+  slack: nyu-agile-software:tgsZsfAp9TITKlOlU8S2qjXf
   email:
     recipients:
     - cdj273@nyu.edu
