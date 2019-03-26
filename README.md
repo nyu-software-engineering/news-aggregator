@@ -22,7 +22,7 @@ Unit tests are compiled [here](https://github.com/nyu-software-engineering/news-
 * `npm test`
 * `npm run test-with-coverage`
 
-## Status Badge
+## Status Badge Travis CI 
 [![Build Status](https://travis-ci.com/nyu-software-engineering/news-aggregator.svg?branch=master)](https://travis-ci.com/nyu-software-engineering/news-aggregator)
 
 ## Contributors
