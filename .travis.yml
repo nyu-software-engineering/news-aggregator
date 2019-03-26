@@ -6,3 +6,11 @@ notifications:
   slack: nyu-agile-software:hTHCUOGLbb3Ioq083BjRuTTk
     on_success: change
     on_failure: always
+  email:
+    recipients:
+    - cdj273@nyu.edu
+    - lh1945@nyu.edu
+    - morozj01@nyu.edu
+    - ag5054@nyu.edu
+    on_success: change
+    on_failure: always
