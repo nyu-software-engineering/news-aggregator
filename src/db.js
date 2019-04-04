@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const config = require('./config.js');
 
-const Schema = mongoose.schema; 
+const Schema = mongoose.Schema; 
 const userSchema = new Schema({
-    Firstname: String, 
-    Lastname: String, 
-    Username: String, 
-    Password: String, 
-    Interests: [{type:String}]
+    firstname: String, 
+    lastname: String, 
+    username: String, 
+    password: String, 
+    interests: [{type:String}]
 });
 
 

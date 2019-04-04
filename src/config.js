@@ -7,7 +7,7 @@ if(process.env.NODE_ENV == "PRODUCTION") prod = true;
 module.exports = {
     server:{
         host:prod?'TBD':'localhost',
-        port:prod?'TBD':'3000'
+        port:prod?'TBD':3000
     }, 
     db:{
         host:prod?'TBD':'localhost',
