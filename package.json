@@ -19,6 +19,7 @@
   "homepage": "https://github.com/nyu-software-engineering/news-aggregator#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "mongoose": "^5.4.21",
     "password-validator": "^4.1.1",
     "prompt": "^1.0.0",
     "request": "^2.88.0",
