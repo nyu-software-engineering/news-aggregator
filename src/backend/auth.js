@@ -12,13 +12,13 @@ module.exports = {
             object.res.status(400).send({message:"Username cannot be blank"});
         }
         else{
-            db.userModel.find({UserName:object.req.body.username},(err,resp)=>{
+            db.userModel.find({username:object.req.body.username},(err,resp)=>{
                 if(err){
                     console.log(err);
                     object.res.status(500).send({message:"System error"});
                 }
                 else if(resp[0]){
-                    res.status(400).send({message:"Error, username taken"});
+                    object.res.status(400).send({message:"Error, username taken"});
                 }else{
                     newUserDB = new db.userModel({
                         firstname:object.req.body.firstname, 
