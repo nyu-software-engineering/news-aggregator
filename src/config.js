@@ -12,6 +12,7 @@ module.exports = {
     db:{
         host:prod?'TBD':'localhost',
         port:prod?'TBD':'27017',
+        database:prod?'TBD':"news",
         password:prod?process.env.MONGO_PASSWORD:'',
         username:prod?process.env.MONGO_USER:''
     }
