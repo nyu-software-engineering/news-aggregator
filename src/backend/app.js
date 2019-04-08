@@ -11,7 +11,8 @@ app.use(express.static('src/frontEnd'));
 
 
 app.get("/",(req,res)=>{
-    res.sendFile("../frontEnd/index.html");
+    //res.sendFile("../frontEnd/index.html");\
+    res.render('index');
 });
 
 app.get("/login",(req,res)=>{
