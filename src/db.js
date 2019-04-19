@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const config = require('./config.js');
+const uniqueValidator = require('mongoose-unique-validator');
 
 const Schema = mongoose.Schema; 
 const userSchema = new Schema({
@@ -10,9 +11,20 @@ const userSchema = new Schema({
     interests: [{type:String}]
 });
 
+const ArticleSchema = new Schema({
+    Title:String,
+    Summary:String,
+    Description:String,
+    PubDate:Date,
+    Author:String,
+    Link:{type:String, unique:"True"},
+    Src: String
+    });
+    ArticleSchema.plugin(uniqueValidator);
 
 module.exports = {
-    userModel : mongoose.model("User",userSchema)
+    userModel : mongoose.model("User",userSchema),
+    articleModel: mongoose.model("Article",ArticleSchema)
 }; 
 
 if(process.env.NODE_ENV == "PRODUCTION"){

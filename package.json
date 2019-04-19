@@ -20,14 +20,16 @@
   "dependencies": {
     "express": "^4.16.4",
     "mongoose": "^5.4.21",
+    "mongoose-unique-validator": "^2.0.3",
     "password-validator": "^4.1.1",
     "prompt": "^1.0.0",
     "request": "^2.88.0",
+    "rss-feed-emitter": "^2.0.1",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.0.2",
+    "mocha": "^6.1.4",
     "nyc": "^13.3.0"
   },
   "directories": {

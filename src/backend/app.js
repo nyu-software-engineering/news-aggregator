@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const config = require("../config.js")
 const auth = require("./auth.js");
 const app = express();
+const feeder = require("./rss-reader.js");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('src/frontEnd'));
 
