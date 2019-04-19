@@ -18,7 +18,8 @@ const ArticleSchema = new Schema({
     PubDate:Date,
     Author:String,
     Link:{type:String, unique:"True"},
-    Src: String
+    Src: String,
+    Categories:Array
     });
     ArticleSchema.plugin(uniqueValidator);
 
