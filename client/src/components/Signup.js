@@ -51,7 +51,7 @@ const FormPage = () => {
         </MDBCol>
       </MDBRow>
     </MDBContainer>
-  );
-};
+  )
+}
 
 export default FormPage;
