@@ -18,7 +18,7 @@ class MyNewsPage extends React.Component {
             </MDBCol>
           <MDBCol md="9">
             <Jumbotron className="mt-3" style={{ padding: 20 }} fluid>
-                <h4>News Articles</h4>
+                <h2><strong>News Articles</strong></h2>
                 <Newscard cardContent='COLOMBO, Sri Lanka — The confidential security memo laid it all out: names, addresses, phone numbers, even the times in the middle of the night that one suspect would visit his wife.' cardTitle='Sri Lanka Was Warned of Possible Attacks. Why Didn’t It Stop Them?' link="https://www.nytimes.com/2019/04/22/world/asia/ntj-warning-sri-lanka-government.html" source="[NYTimes]" imgSource="https://static01.nyt.com/images/2019/04/22/world/22srilanka-warning1/merlin_153825870_0807bf43-dbba-493c-a9b2-b6c89a29a7f9-articleLarge.jpg?quality=75&auto=webp&disable=upscale"/>
                 <br></br>
                 <Newscard cardContent='SEOUL— Samsung Electronics Co. is delaying the rollout of its Galaxy Fold smartphone until at least next month, after tech reviewers reported their test devices had malfunctioned.' cardTitle='Samsung’s Galaxy Fold Smartphone Release Delayed' link="https://www.wsj.com/articles/samsungs-galaxy-fold-smartphone-release-delayed-11555941705?mod=hp_lead_pos4" source="[WSJ]" imgSource="https://images.wsj.net/im-68674?width=620&aspect_ratio=1.5"/>

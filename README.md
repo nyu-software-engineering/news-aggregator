@@ -15,7 +15,9 @@ From the perspective of the end user, the service will list available news sourc
 ## Installing
 
 Clone our repo by running `git clone https://github.com/nyu-software-engineering/news-aggregator.git`. 
-Run `npm install` to install all of the dependencies required.
+Run `npm install mdbreact`
+Run `npm install`
+Run `npm start --prefix ./client` 
 
 ## Testing
 Unit tests are compiled [here](https://github.com/nyu-software-engineering/news-aggregator/blob/master/test/test.js). Run the following scripts:
