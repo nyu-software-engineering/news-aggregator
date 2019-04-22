@@ -1,8 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-
-
 import HomePage from './pages/HomePage';
 import MyNewsPage from './pages/MyNewsPage';
 import SavedForLaterPage from './pages/SavedForLaterPage';

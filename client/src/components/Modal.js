@@ -20,7 +20,7 @@ render() {
       <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
         <MDBModalHeader toggle={this.toggle}>{this.props.modalTitle}</MDBModalHeader>
         <MDBModalBody>
-          {this.props.modalContent};
+          {this.props.modalContent}
         </MDBModalBody>
         
       </MDBModal>

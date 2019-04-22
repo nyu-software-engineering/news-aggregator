@@ -9,7 +9,7 @@ return (
     <MDBListGroupItem href="#" hover>NYTimes</MDBListGroupItem>
     <MDBListGroupItem href="#" hover>WSJ</MDBListGroupItem>
     <MDBListGroupItem href="#" hover>ESPN</MDBListGroupItem>
-    <MDBListGroupItem href="#" hover>Vestibulum at eros</MDBListGroupItem>
+    <MDBListGroupItem href="#" hover>CNN</MDBListGroupItem>
   </MDBListGroup>
 </MDBContainer>
 
