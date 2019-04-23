@@ -4,23 +4,39 @@ const db = require("../db.js");
 const mongoose = require("mongoose");
 const config = require("../config.js"); 
 
-
+class articleFactory{
+  constructor(item){
+    this.Title = item.title? item.title:"";
+    this.Summary =item.summary? item.summary:"";
+    this.Description = item.description?item.description:"";
+    this.PubDate = item.date? new Date(item.date).toISOString():"";
+    this.Author = item.author? item.author:"";
+    this.Link = item.link? item.link:"";
+    this.Publisher = item.meta.title; 
+    this.Categories = item.categories?item.categories:"";
+  }
+  
+  returnArticle(){
+    return{
+        "Title":this.Title,
+        "Summary":this.Summary,
+        "Description":this.Description,
+        "PubDate":this.Date,
+        "Author":this.Author,
+        "Link":this.Link,
+        "Publisher":this.Publisher,
+        "Categories":this.Categories
+    }
+  }
+}
 feeder.add({url:"http://rss.nytimes.com/services/xml/rss/nyt/Business.xml",refresh:5000});
 
 feeder.on('new-item', function(item) {
     console.log(item);
     console.log("\n\n\n\n\n");
     
-    const newArticleDB = new db.articleModel({
-        "Title":(item.title? item.title:""),
-        "Summary":(item.summary? item.summary:""),
-        "Description":(item.description?item.description:""),
-        "PubDate":(item.date? new Date(item.date):""),
-        "Author":(item.author? item.author:""),
-        "Link":(item.link? item.link:""),
-        "Publisher":item.meta.title,
-        "Categories":item.categories?item.categories:""
-      }); 
+    const newArticle = new articleFactory(item); //instantiate factory
+    const newArticleDB = new db.articleModel(newArticle.returnArticle()); //return object 
 
       newArticleDB.save(function(err){
         if(err){
