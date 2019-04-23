@@ -1,7 +1,8 @@
 import React from "react";
-import { MDBContainer, MDBRow, MDBCol, Jumbotron,MDBBtn} from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, Jumbotron } from "mdbreact";
 import Listgroup from "../components/Listgroup";
 import Newscard from "../components/Newscard";
+import Newmodal from "../components/Newmodal";
 
 class MyNewsPage extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class MyNewsPage extends React.Component {
                 <h4>News Sources</h4>
                 <Listgroup />
                 <br></br>
-                <MDBBtn rounded size="sm" onClick={this.toggle}>+ Add Source</MDBBtn>
+                <Newmodal btnSize="sm" modalTitle='Add News Source' btnTxt='+ Add Source'/>
             </Jumbotron>
             </MDBCol>
           <MDBCol md="9">

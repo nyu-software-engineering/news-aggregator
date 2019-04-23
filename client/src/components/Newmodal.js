@@ -24,7 +24,7 @@ render() {
 
   return (
     <MDBContainer>
-      <MDBBtn onClick={this.toggle}>{this.props.btnTxt}</MDBBtn>
+      <MDBBtn size={this.props.btnSize} onClick={this.toggle}>{this.props.btnTxt}</MDBBtn>
       <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
         <MDBModalHeader toggle={this.toggle}>{this.props.modalTitle}</MDBModalHeader>
         <MDBModalBody>
