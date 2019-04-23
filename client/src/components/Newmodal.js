@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader} from 'mdbreact';
 
-class Modal extends Component {
-state = {
-  modal: false
-}
+class Newmodal extends Component {
+    constructor(modalType){
+        super();
+        this.signUp = false;
+        if(modalType === 'Signup'){
+            this.signUp = true;
+        }
+    }
 
-toggle = () => {
-  this.setState({
-    modal: !this.state.modal
-  });
-}
+    state = {
+    modal: false
+    }
+
+    toggle = () => {
+    this.setState({
+        modal: !this.state.modal
+    });
+    }
 
 render() {
 
@@ -18,7 +26,7 @@ render() {
     <MDBContainer>
       <MDBBtn onClick={this.toggle}>{this.props.btnTxt}</MDBBtn>
       <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
-        <MDBModalHeader toggle={this.toggle}>{this.props.modalTitle}</MDBModalHeader>
+        <MDBModalHeader toggle={this.toggle}>{this.props.Title}</MDBModalHeader>
         <MDBModalBody>
           {this.props.modalContent}
         </MDBModalBody>
@@ -29,4 +37,4 @@ render() {
   }
 }
 
-export default Modal;
+export default Newmodal;

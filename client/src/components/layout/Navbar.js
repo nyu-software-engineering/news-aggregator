@@ -5,7 +5,7 @@ MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
 } from "mdbreact";
 import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "../../Routes";
-import Modal from '../Modal';
+import Newmodal from '../Newmodal';
 import Login from '../Login';
 
 class Navbar extends Component{
@@ -24,6 +24,7 @@ class Navbar extends Component{
 
 render() {
     const { collapseID } = this.state;
+    const loginModal = new Newmodal('Login');
   return (
       <Router>
           <div className="flyname">
@@ -62,7 +63,7 @@ render() {
                 </MDBNavbarNav>
                 <MDBNavbarNav right>
                     <MDBNavItem>
-                    <Modal modalContent={<Login />} modalTitle='Your Account' btnTxt='Log In'/>
+                    {!loginModal.signUp && <Newmodal modalContent={<Login />} modalTitle='Your Account' btnTxt='Log In'/>}
                     </MDBNavItem>
                     
                 </MDBNavbarNav>
