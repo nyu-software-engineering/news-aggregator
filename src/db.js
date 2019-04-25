@@ -8,7 +8,8 @@ const userSchema = new Schema({
     lastname: String, 
     username: String, 
     password: String, 
-    interests: [{type:String}]
+    interests: [{type:String}], 
+    saved: [{type:String}]
 });
 
 const ArticleSchema = new Schema({

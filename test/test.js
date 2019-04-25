@@ -1,6 +1,6 @@
 const validatePswd = require('../src/validatePswd.js');
 const validateUsername = require('../src/validateUsername.js')
-const parseRss = require('../src/rss-reader.js');
+const parseRss = require('../src/rss-reader-test.js/index.js');
 const assert = require('assert');
 
 //Test line
