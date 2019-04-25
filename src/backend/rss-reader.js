@@ -30,6 +30,7 @@ class articleFactory{
   }
 }
 feeder.add({url:"http://rss.nytimes.com/services/xml/rss/nyt/Business.xml",refresh:5000});
+//TODO: add more feeds
 
 feeder.on('new-item', function(item) {
     console.log(item);
