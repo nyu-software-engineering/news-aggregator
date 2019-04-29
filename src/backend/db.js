@@ -16,6 +16,7 @@ const ArticleSchema = new Schema({
     Title:String,
     Summary:String,
     Description:String,
+    Publisher:String,
     PubDate:Date,
     Author:String,
     Link:{type:String, unique:"True"},

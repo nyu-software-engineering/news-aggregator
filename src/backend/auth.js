@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const db = require("../db.js");
+const db = require("./db.js");
 
 module.exports = {
 

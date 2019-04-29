@@ -1,19 +1,20 @@
 const RssFeedEmitter = require('rss-feed-emitter');
 const feeder = new RssFeedEmitter();
-const db = require("../db.js");
+const db = require("./db.js");
 const mongoose = require("mongoose");
-const config = require("../config.js"); 
+const config = require("./config.js"); 
+const feeds = require("./feeds.js").feeds; 
 
 class articleFactory{
   constructor(item){
-    this.Title = item.title? item.title:"";
-    this.Summary =item.summary? item.summary:"";
-    this.Description = item.description?item.description:"";
-    this.PubDate = item.date? new Date(item.date).toISOString():"";
-    this.Author = item.author? item.author:"";
-    this.Link = item.link? item.link:"";
+    this.Title = item.title;
+    this.Summary =item.summary;
+    this.Description = item.description;
+    this.PubDate = new Date(item.date).toISOString();
+    this.Author = item.author;
+    this.Link = item.link;
     this.Publisher = item.meta.title; 
-    this.Categories = item.categories?item.categories:"";
+    this.Categories = item.categories;
   }
   
   returnArticle(){
@@ -21,7 +22,7 @@ class articleFactory{
         "Title":this.Title,
         "Summary":this.Summary,
         "Description":this.Description,
-        "PubDate":this.Date,
+        "PubDate":this.PubDate,
         "Author":this.Author,
         "Link":this.Link,
         "Publisher":this.Publisher,
@@ -29,21 +30,25 @@ class articleFactory{
     }
   }
 }
-feeder.add({url:"http://rss.nytimes.com/services/xml/rss/nyt/Business.xml",refresh:5000});
+for(let x in feeds){
+  feeder.add({url:feeds[1].url,refresh:5000});
+}
+
 //TODO: add more feeds
 
 feeder.on('new-item', function(item) {
     console.log(item);
-    console.log("\n\n\n\n\n");
+    //console.log("\n\n\n\n\n");
     
     const newArticle = new articleFactory(item); //instantiate factory
     const newArticleDB = new db.articleModel(newArticle.returnArticle()); //return object 
-
-      newArticleDB.save(function(err){
+    console.log(newArticle.returnArticle());
+    console.log("\n\n\n\n\n");
+      /*newArticleDB.save(function(err){
         if(err){
-          console.log(err);
+          //console.log(err);
         }
-      });
+      });*/
 });  
 
 if(process.env.NODE_ENV == "PRODUCTION"){
