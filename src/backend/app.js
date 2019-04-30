@@ -32,7 +32,7 @@ app.post("/register",(req,res)=>{
         res:res
     }
     auth.register(object);
-})
+});
 
 app.post("/login",(req,res)=>{
     const object = {
@@ -41,7 +41,35 @@ app.post("/login",(req,res)=>{
     }
     auth.login(object);
 
-})
+});
 
+
+app.get("/news/publisher/:publisher", (req,res)=>{
+    db.articleModel.find({"Publisher":req.params.publisher},(err,data)=>{
+        if(data[0]){
+            res.send(data);
+        }else if(!data[0]){
+            res.status(400).send("Publisher not found"); 
+        }else if(err){
+            res.status(500).send(err);
+        }
+    }); 
+});
+
+app.get("/news/article",(req,res)=>{
+    db.articleModel.find({"Link":req.query.link},(err,data)=>{
+        if(data[0]){
+            res.send(data);
+        }else if(!data[0]){
+            res.status(400).send("Article not found"); 
+        }else if(err){
+            res.status(500).send(err);
+        }
+    }); 
+}); 
+
+app.get("/news/feedlist",(req,res)=>{
+    res.send(feeds); 
+})
 
 app.listen(config.server.port);
