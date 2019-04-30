@@ -31,24 +31,24 @@ class articleFactory{
   }
 }
 for(let x in feeds){
-  feeder.add({url:feeds[1].url,refresh:5000});
+  feeder.add({url:feeds[x].url,refresh:5000});
 }
 
 //TODO: add more feeds
 
 feeder.on('new-item', function(item) {
-    console.log(item);
+    //console.log(item);
     //console.log("\n\n\n\n\n");
     
     const newArticle = new articleFactory(item); //instantiate factory
     const newArticleDB = new db.articleModel(newArticle.returnArticle()); //return object 
-    console.log(newArticle.returnArticle());
-    console.log("\n\n\n\n\n");
-      /*newArticleDB.save(function(err){
+   // console.log(newArticle.returnArticle());
+    //console.log("\n\n\n\n\n");
+      newArticleDB.save(function(err){
         if(err){
-          //console.log(err);
+          console.log(err);
         }
-      });*/
+      });
 });  
 
 if(process.env.NODE_ENV == "PRODUCTION"){
