@@ -27,6 +27,9 @@ app.get("/register",(req,res)=>{
 
 
 app.post("/register",(req,res)=>{
+    if(!req.body.username || !req.body.password){
+        return res.status(400).send({message:"error", reason:"username or pw not included with request"}); 
+    }
     const object = {
         req:req,
         res:res
@@ -70,6 +73,46 @@ app.get("/news/article",(req,res)=>{
 
 app.get("/news/feedlist",(req,res)=>{
     res.send(feeds); 
+});
+
+app.post("/save",(req,res)=>{
+    const savedArt = {
+        title:req.body.title,
+        link:req.body.link,
+        date:req.body.date
+    }
+    db.userModel.find({username:req.body.username, saved:{title:req.body.title,link:req.body.link,date:req.body.date}}, (err,resp)=>{
+        if(err){
+            console.log(err);
+        }else{
+            if(resp[0]){
+                res.status(400).send({message:"error", reason:"User already upvoted this"}); 
+            }else{
+                db.userModel.findOneAndUpdate(
+                    {username:req.body.username},
+                    {$push:{saved:savedArt}}, 
+                    (err,data)=>{
+                        if (err){
+                            res.status(400).send({message:"error"});
+                        }else{
+                            res.send({message:"success"}); 
+                        }
+                    }) 
+            }
+            
+        }
+    })
+    
+});
+
+app.get("/saved",(req,res)=>{
+    db.userModel.findOne({"username":req.query.username}, (err,resp)=>{
+        if(resp){res.send(resp);}
+        else{
+            res.status(400).send({message:"error",reason:"user not found"});
+        } 
+    })
 })
 
+console.log("Backend running on port "+config.server.port); 
 app.listen(config.server.port);
