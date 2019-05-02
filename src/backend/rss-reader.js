@@ -9,7 +9,7 @@ class articleFactory{
   constructor(item){
     this.Title = item.title;
     this.Summary =item.summary;
-    this.Description = item.description;
+    this.Content = item.description;
     this.PubDate = new Date(item.date).toISOString();
     this.Author = item.author;
     this.Link = item.link;
@@ -21,7 +21,7 @@ class articleFactory{
     return{
         "Title":this.Title,
         "Summary":this.Summary,
-        "Description":this.Description,
+        "Content":this.Content,
         "PubDate":this.PubDate,
         "Author":this.Author,
         "Link":this.Link,
@@ -46,7 +46,7 @@ feeder.on('new-item', function(item) {
     //console.log("\n\n\n\n\n");
       newArticleDB.save(function(err){
         if(err){
-          console.log(err);
+         // console.log(err);
         }
       });
 });  

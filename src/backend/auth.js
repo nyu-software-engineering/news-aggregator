@@ -6,19 +6,19 @@ module.exports = {
     register: (object)=>{
 
         if(!object.req.body.password){
-            object.res.status(400).send({message:"Password can't be blank"});
+            object.res.status(400).send({message:"error",reason:"Password can't be blank"});
         }
         else if(!object.req.body.username){
-            object.res.status(400).send({message:"Username cannot be blank"});
+            object.res.status(400).send({message:"error",reason:"Username cannot be blank"});
         }
         else{
             db.userModel.find({username:object.req.body.username},(err,resp)=>{
                 if(err){
                     console.log(err);
-                    object.res.status(500).send({message:"System error"});
+                    object.res.status(500).send({message:"error"});
                 }
                 else if(resp[0]){
-                    object.res.status(400).send({message:"Error, username taken"});
+                    object.res.status(400).send({message:"error", reason:"username taken"});
                 }else{
                     newUserDB = new db.userModel({
                         firstname:object.req.body.firstname, 
@@ -29,7 +29,7 @@ module.exports = {
                     });
 
                     newUserDB.save(function(){
-                        object.res.send({message:"Success, new user created"});
+                        object.res.send({message:"success"});
                     }); 
                 }
             })
@@ -41,16 +41,16 @@ module.exports = {
         db.userModel.find({"username":object.req.body.username},(err,resp)=>{
             if(err){
                 console.log(err);
-                object.res.status(500).send({message:"System error"});
+                object.res.status(500).send({message:"error"});
             }
             else if(!resp[0]){
-                object.res.status(400).send({message:"Error, user not found"});
+                object.res.status(400).send({message:"error",reason:"user not found"});
             }else{
                 console.log(resp[0]);
                 if(resp[0].password == object.req.body.password){
-                    object.res.send({message:"Success, you are logged in!"});
+                    object.res.send({message:"success"});
                 }else{
-                    object.res.status(400).send({message:"Error, username and password do not match"});
+                    object.res.status(400).send({message:"error", reason:"username and password do not match"});
                 }
             }
         })
