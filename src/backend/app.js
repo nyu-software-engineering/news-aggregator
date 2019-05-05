@@ -7,6 +7,9 @@ const auth = require("./auth.js");
 const app = express();
 const feeder = require("./rss-reader.js");
 const feeds = require("./feeds.js").feeds;
+const cors = require("cors");
+
+app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('src/frontEnd'));
 

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Component }  from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 
-const Login = () => {
+// const Login = () => {
+class Login extends Component{
+  render(){
   return (
     <MDBContainer>
       <MDBRow>
@@ -18,6 +20,7 @@ const Login = () => {
                 error="wrong"
                 success="right"
               />
+              
               <MDBInput
                 label="Type your password"
                 icon="lock"
@@ -34,6 +37,6 @@ const Login = () => {
       </MDBRow>
     </MDBContainer>
   );
-};
-
+}
+}
 export default Login;

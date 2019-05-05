@@ -20,18 +20,19 @@
   },
   "homepage": "https://github.com/nyu-software-engineering/news-aggregator#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "mdbreact": "^4.13.0",
     "mongoose": "^5.4.21",
     "mongoose-unique-validator": "^2.0.3",
     "password-validator": "^4.1.1",
     "prompt": "^1.0.0",
-    "request": "^2.88.0",
-    "rss-feed-emitter": "^2.0.1",
-    "xml-js": "^1.6.11",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-scripts": "2.0.5"
+    "react-scripts": "2.0.5",
+    "request": "^2.88.0",
+    "rss-feed-emitter": "^2.0.1",
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "chai": "^4.2.0",

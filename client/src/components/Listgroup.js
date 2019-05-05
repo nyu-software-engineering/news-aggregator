@@ -1,19 +1,21 @@
-import React from 'react';
-import { MDBListGroup, MDBListGroupItem, MDBContainer } from "mdbreact";
+import React from "react";
+import { MDBBtn, MDBBtnGroup, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBRow, MDBCol } from
+"mdbreact";
 
-const Listgroup = props => {
-return (
-<MDBContainer>
-  <MDBListGroup >
-    <MDBListGroupItem href="#" active>All</MDBListGroupItem>
-    <MDBListGroupItem href="#" hover>NYTimes</MDBListGroupItem>
-    <MDBListGroupItem href="#" hover>WSJ</MDBListGroupItem>
-    <MDBListGroupItem href="#" hover>ESPN</MDBListGroupItem>
-    <MDBListGroupItem href="#" hover>CNN</MDBListGroupItem>
-  </MDBListGroup>
-</MDBContainer>
+const BtnGroupPage = () => {
+  return (
+  <MDBRow center>
+      <MDBBtnGroup vertical>
+        <MDBBtn color="amber" className="ml-0">NYTimes</MDBBtn>
+        <MDBBtn color="amber">WSJ</MDBBtn>
+        <MDBBtn color="amber">ESPN</MDBBtn>
+        <MDBBtn color="amber">Button</MDBBtn>
 
-);
-};
+      </MDBBtnGroup>
+ 
+    
+  </MDBRow>
+  )
+}
 
-export default Listgroup;
+export default BtnGroupPage;

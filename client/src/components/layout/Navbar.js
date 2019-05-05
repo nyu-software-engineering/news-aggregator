@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import {
 MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, 
-MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
+MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon
 } from "mdbreact";
 import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "../../Routes";
 import Newmodal from '../Newmodal';
 import Login from '../Login';
+
 
 class Navbar extends Component{
     state={
@@ -62,13 +63,32 @@ render() {
                     </MDBNavItem>
                 </MDBNavbarNav>
                 <MDBNavbarNav right>
-                    <MDBNavItem>
-                    {!loginModal.signUp && <Newmodal modalContent={<Login />} modalTitle='Your Account' btnTxt='Log In'/>}
-                    </MDBNavItem>
+                   <MDBNavItem>
+                    {/* {!loginModal.signUp && <Newmodal modalContent={<Login />} modalTitle='Your Account' btnTxt='Log In'/>} */}
+                    <Newmodal modalContent={<Login />} modalTitle='Your Account' btnTxt='Log In'/>
+  </MDBNavItem> 
+  
+          <MDBNavItem>
+            <MDBDropdown>
+              <MDBDropdownToggle nav caret>
+                <MDBIcon icon="user" />
+              </MDBDropdownToggle>
+              <MDBDropdownMenu className="dropdown-default" right>
+                <MDBDropdownItem href="#!">Log In</MDBDropdownItem>
+                <MDBDropdownItem href="#!">Another Action</MDBDropdownItem>
+                <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
+                <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
+              </MDBDropdownMenu>
+            </MDBDropdown>
+          </MDBNavItem>
                     
                 </MDBNavbarNav>
+                 
+                
                 </MDBCollapse>
+                    
             </MDBNavbar>
+
             {collapseID}
           <main >
             <Routes />

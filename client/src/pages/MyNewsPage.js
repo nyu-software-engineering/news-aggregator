@@ -1,18 +1,79 @@
 import React from "react";
-import { MDBContainer, MDBRow, MDBCol, Jumbotron } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, Jumbotron, MDBBtn, MDBBtnGroup } from "mdbreact";
 import Listgroup from "../components/Listgroup";
 import Newscard from "../components/Newscard";
 import Newmodal from "../components/Newmodal";
 
+// function callAPI2(apihref) {
+//   fetch(apihref, {mode: 'cors'})
+//       .then(res => res.json())
+//       //.then(res => this.setState({ apiResponse: res }));
+//       //'http://localhost:9000/news/publisher/NYT > Business'
+//       .then(json => {this.setState({isLoaded: true, items: json})});
+  
+//   //  fetch('http://localhost:9000/news/publisher/www.espn.com - NFL', {mode: 'cors'})
+//   //      .then(res2 => res2.json())
+//   //      //.then(res => this.setState({ apiResponse: res }));
+//   //      .then(json => {this.setState({espnItems: json})});
+// }
+
+
+
+
 class MyNewsPage extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        items: [],
+        isLoaded: false
+    }
+}
+
+  callAPI() {
+    fetch('http://localhost:9000/news/publisher/NYT > Business', {mode: 'cors'})
+        .then(res => res.json())
+        //.then(res => this.setState({ apiResponse: res }));
+        //'http://localhost:9000/news/publisher/NYT > Business'
+        .then(json => {this.setState({isLoaded: true, items: json})});
+    
+    //  fetch('http://localhost:9000/news/publisher/www.espn.com - NFL', {mode: 'cors'})
+    //      .then(res2 => res2.json())
+    //      //.then(res => this.setState({ apiResponse: res }));
+    //      .then(json => {this.setState({espnItems: json})});
+  }
+  componentDidMount() {
+    this.callAPI();
+  }
+
+ 
   render() {
+    const items = this.state.items;
+    // const espnItems = this.state.espnItems;
+
+
+    console.log("items");
+    console.log(items);
+    // console.log("espn");
+    // console.log(espnItems);
+    // console.log("allItems");
+    // console.log(allItems);
+
     return (
       <MDBContainer fluid>
         <MDBRow>
           <MDBCol md="3">
             <Jumbotron className="mt-3" style={{ padding: 20 }}>
                 <h4>News Sources</h4>
-                <Listgroup />
+                <MDBRow center>
+                  <MDBBtnGroup vertical>
+                    <MDBBtn color="amber" className="ml-0" >NYTimes</MDBBtn>
+                    {/* onClick={callAPI2('http://localhost:9000/news/publisher/NYT > Business')} */}
+                    <MDBBtn color="amber">WSJ</MDBBtn>
+                    <MDBBtn color="amber">ESPN</MDBBtn>
+                    <MDBBtn color="amber">Button</MDBBtn>
+                  </MDBBtnGroup>
+              </MDBRow>
                 <br></br>
                 <Newmodal btnSize="sm" modalTitle='Add News Source' btnTxt='+ Add Source'/>
             </Jumbotron>
@@ -20,19 +81,15 @@ class MyNewsPage extends React.Component {
           <MDBCol md="9">
             <Jumbotron className="mt-3" style={{ padding: 20 }} fluid>
                 <h2><strong>News Articles</strong></h2>
-                <Newscard cardContent='COLOMBO, Sri Lanka — The confidential security memo laid it all out: names, addresses, phone numbers, even the times in the middle of the night that one suspect would visit his wife.' cardTitle='Sri Lanka Was Warned of Possible Attacks. Why Didn’t It Stop Them?' link="https://www.nytimes.com/2019/04/22/world/asia/ntj-warning-sri-lanka-government.html" source="[NYTimes]" imgSource="https://static01.nyt.com/images/2019/04/22/world/22srilanka-warning1/merlin_153825870_0807bf43-dbba-493c-a9b2-b6c89a29a7f9-articleLarge.jpg?quality=75&auto=webp&disable=upscale"/>
-                <br></br>
-                <Newscard cardContent='SEOUL— Samsung Electronics Co. is delaying the rollout of its Galaxy Fold smartphone until at least next month, after tech reviewers reported their test devices had malfunctioned.' cardTitle='Samsung’s Galaxy Fold Smartphone Release Delayed' link="https://www.wsj.com/articles/samsungs-galaxy-fold-smartphone-release-delayed-11555941705?mod=hp_lead_pos4" source="[WSJ]" imgSource="https://images.wsj.net/im-68674?width=620&aspect_ratio=1.5"/>
-                <br></br>
-                <Newscard cardContent="INDIANAPOLIS -- It's hard to imagine how Easter Sunday could've gone much better for Gordon Hayward." cardTitle="Hayward returns home with 20 in Celtics' win" link="http://www.espn.com/nba/story/_/id/26575650/hayward-returns-home-20-celtics-win" source="[ESPN]" imgSource="https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2019%2F0421%2Fr532270_1296x729_16%2D9.jpg&w=570&format=jpg"/>
-                <br></br>
-                <Newscard cardContent="President Trump sued his own accounting firm and the Democratic chairman of the House Oversight Committee at the same time on Monday — trying an unusual tactic to stop the firm from giving the committee details about Trump’s past financial dealings." cardTitle="Trump sues in bid to block congressional subpoena of financial records" link="https://www.washingtonpost.com/politics/trump-sues-in-bid-to-block-congressional-subpoena-of-financial-records/2019/04/22/a98de3d0-6500-11e9-82ba-fcfeff232e8f_story.html?utm_term=.9526939551b2" source="[Washington Post]" imgSource="https://www.washingtonpost.com/resizer/bV6OR2f0yw3MeMWHeuorjncNSdY=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/DJ2733CKPUI6TDH4FROQTGOCDY.jpg"/>
-                <br></br>
-                <Newscard />
+
+                {items.map((item) => <div><Newscard cardContent={item.Summary} cardTitle={item.Title} link={item.Link}/> <br></br></div>)}
+                
             </Jumbotron>
           </MDBCol>
         </MDBRow>
+       
       </MDBContainer>
+      
     );
   }
 }
