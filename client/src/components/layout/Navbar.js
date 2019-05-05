@@ -65,7 +65,7 @@ render() {
                 <MDBNavbarNav right>
                    <MDBNavItem>
                     {/* {!loginModal.signUp && <Newmodal modalContent={<Login />} modalTitle='Your Account' btnTxt='Log In'/>} */}
-                    <Newmodal modalContent={<Login />} modalTitle='Your Account' btnTxt='Log In'/>
+                    {/* <Newmodal modalContent={<Login />} modalTitle='Your Account' btnTxt='Log In'/> */}
   </MDBNavItem> 
   
           <MDBNavItem>

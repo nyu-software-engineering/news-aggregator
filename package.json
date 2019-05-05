@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha",
     "test-with-coverage": "nyc --reporter=text mocha",
-    "start": "react-scripts start",
+    "start": "concurrently \"cd src/backend && node app.js\" \"cd client && npm start\"",
     "build": "react-scripts build"
   },
   "repository": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/nyu-software-engineering/news-aggregator#readme",
   "dependencies": {
+    "concurrently": "^4.1.0",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "mdbreact": "^4.13.0",
@@ -49,5 +50,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "keywords": []
 }
