@@ -70,7 +70,7 @@ render() {
                     {/* <Newmodal modalContent={<Login />} modalTitle='Your Account' btnTxt='Log In'/> */}
   </MDBNavItem> 
   
-          <MDBNavItem>
+          {/* <MDBNavItem>
             <MDBDropdown>
               <MDBDropdownToggle nav caret>
                 <MDBIcon icon="user" />
@@ -82,7 +82,7 @@ render() {
                 <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
               </MDBDropdownMenu>
             </MDBDropdown>
-          </MDBNavItem>
+          </MDBNavItem> */}
                     
                 </MDBNavbarNav>
                  
