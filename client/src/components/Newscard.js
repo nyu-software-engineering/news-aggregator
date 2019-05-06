@@ -12,6 +12,8 @@ class Newscard extends Component{
             {this.props.cardContent}
             <br></br>
             {this.props.source}
+            <br></br>
+            {this.props.pubdate}
           </MDBCardText>
           <MDBBtn outline color="warning" size="sm">Save for Later</MDBBtn>
         </MDBCardBody>

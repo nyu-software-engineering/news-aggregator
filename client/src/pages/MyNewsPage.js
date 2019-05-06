@@ -67,19 +67,17 @@ class MyNewsPage extends React.Component {
             </MDBCol>
           <MDBCol md="9">
             <Jumbotron className="mt-3" style={{ padding: 20 }} fluid>
-                <h2><strong>News Articles</strong></h2>
+                <h2><strong>News Articles - </strong>{source}</h2>
 
                 {items.map((item) => <div>
                   <Newscard 
                       cardTitle = {item.Title}
                       cardContent={<div dangerouslySetInnerHTML={ {__html: item.Summary} }></div>} 
-                        
-                            
-                            link={item.Link} 
-                            source={source}/> 
+                      link={item.Link} 
+                      source={source}
+                      pubdate={item.PubDate.substring(0,10)}/> 
                             <br></br></div>)}
-                            
-                            {/* cardTitle={item.Title = item.Title.replace(regex, '')}  */}
+                    
             </Jumbotron>
           </MDBCol>
         </MDBRow>
