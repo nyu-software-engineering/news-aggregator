@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
-//import axios from 'axios'
+import axios from 'axios'
 
 class FormPage extends Component {
   
@@ -19,17 +19,18 @@ class FormPage extends Component {
     })
   }
 
-  /*handleSubmit = e => {
+  handleSubmit = e => {
     e.preventDefault()
     console.log(this.state);
     axios.post('http://localhost:9000/register',this.state)
       .then(res => {
         console.log(res)
       })
+      .then(res => res.json())
       .catch(error => {
         console.log(error)
       })
-  }*/
+  }
 
   onSubmit = (e) => {
     e.preventDefault()
@@ -44,7 +45,7 @@ class FormPage extends Component {
       }
     })
     .then(res => res.json())
-    //.then(json => {this.setState({name: json})})
+    .then(json => {this.setState({name: json})})
     .catch(err => {
       console.error(err);
       alert('Error signing up please try again');
@@ -57,7 +58,7 @@ class FormPage extends Component {
     <MDBContainer>
       <MDBRow>
         <MDBCol md="12">
-          <form>
+          <form onSubmit = {this.handleSubmit}>
             <p className="h5 text-center mb-4">Sign up</p>
             <div className="grey-text">
               <MDBInput
@@ -108,7 +109,7 @@ class FormPage extends Component {
               />
             </div>
             <div className="text-center">
-              <MDBBtn color="primary" onClick={this.onSubmit}>Register</MDBBtn>
+              <MDBBtn color="primary" type = "submit">Register</MDBBtn>
             </div>
           </form>
         </MDBCol>

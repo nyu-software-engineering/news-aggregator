@@ -19,17 +19,18 @@ class Login extends Component{
     })
   }
 
-  /*handleSubmit = e => {
+  handleSubmit = e => {
     e.preventDefault()
     console.log(this.state);
     axios.post('http://localhost:9000/login',this.state)
       .then(res => {
         console.log(res)
       })
+      .then(res => res.json())
       .catch(error => {
         console.log(error)
       })
-  }*/
+  }
 
   onSubmit = (e) => {
     e.preventDefault()
