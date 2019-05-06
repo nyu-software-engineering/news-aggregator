@@ -25,6 +25,7 @@ class MyNewsPage extends React.Component {
 
  
   render() {
+    const regex = /(<([^>]+)>)/ig;
     const items = this.state.items;
     const source = this.state.sources;
 
@@ -57,6 +58,8 @@ class MyNewsPage extends React.Component {
                     <MDBBtn outline color="cyan" onClick={() => this.callAPI('http://localhost:9000/news/publisher/GANNETT Syndication Service', 'USA Today Travel')}>USA Today Travel</MDBBtn>  
 
                     <MDBBtn outline color="cyan" onClick={() => this.callAPI('http://localhost:9000/news/publisher/Real Estate', 'Washington Post - Real Estate')}>Washington Post</MDBBtn>  
+
+                    <MDBBtn outline color="cyan" onClick={() => this.callAPI('http://localhost:9000/news/publisher/CinemaBlend Latest Content', 'Cinema Blend')}>Cinema Blend</MDBBtn>  
                                     
                   </MDBBtnGroup>
               </MDBRow>
@@ -66,8 +69,15 @@ class MyNewsPage extends React.Component {
             <Jumbotron className="mt-3" style={{ padding: 20 }} fluid>
                 <h2><strong>News Articles</strong></h2>
 
-                {items.map((item) => <div><Newscard cardContent={item.Summary} cardTitle={item.Title} link={item.Link} source={source}/> <br></br></div>)}
-                
+                {items.map((item) => <div>
+                  <Newscard cardContent={<div dangerouslySetInnerHTML={ {__html: item.Summary} }></div>} 
+                        
+                            
+                            link={item.Link} 
+                            source={source}/> 
+                            <br></br></div>)}
+                            
+                            {/* cardTitle={item.Title = item.Title.replace(regex, '')}  */}
             </Jumbotron>
           </MDBCol>
         </MDBRow>
