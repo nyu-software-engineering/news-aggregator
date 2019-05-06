@@ -13,7 +13,7 @@ class Newscard extends Component{
             <br></br>
             {this.props.source}
           </MDBCardText>
-          <MDBBtn outline color="warning" size="sm">+</MDBBtn>
+          <MDBBtn outline color="warning" size="sm">Save for Later</MDBBtn>
         </MDBCardBody>
 
       </MDBCard>
