@@ -1,5 +1,6 @@
 import React, { Component }  from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
+import axios from 'axios'
 
 // const Login = () => {
 class Login extends Component{
@@ -7,9 +8,9 @@ class Login extends Component{
   constructor(props) {
     super(props)
     this.state = {
-      email : props.email,
-      password: props.password
-    };
+      email : "",
+      password: ""
+    }
     this.handleInputChange = this.handleInputChange.bind(this);
   }
   handleInputChange = (e) => {
@@ -18,7 +19,21 @@ class Login extends Component{
     })
   }
 
-  onSubmit = () => {
+  /*handleSubmit = e => {
+    e.preventDefault()
+    console.log(this.state);
+    axios.post('http://localhost:9000/login',this.state)
+      .then(res => {
+        console.log(res)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }*/
+
+  onSubmit = (e) => {
+    e.preventDefault()
+    console.log(this.state)
     fetch('http://localhost:9000/login', 
     {
       mode: 'cors',
@@ -37,43 +52,47 @@ class Login extends Component{
   }
   
   render(){
-  return (
-    <MDBContainer>
-      <MDBRow>
-        <MDBCol md="12">
-          <form>
-            <p className="h5 text-center mb-4">Log in</p>
-            <div className="grey-text">
-              <MDBInput
-                label="Type your email"
-                icon="envelope"
-                group
-                type="email"
-                validate
-                error="wrong"
-                success="right"
-                value = {this.state.email}
-                onInput={this.handleInputChange}
-              />
-              
-              <MDBInput
-                label="Type your password"
-                icon="lock"
-                group
-                type="password"
-                validate
-                value={this.state.password}
-                onInput={this.handleInputChange}
-              />
-            </div>
-            <div className="text-center">
-              <MDBBtn onClick={this.onSubmit}>Login</MDBBtn>
-            </div>
-          </form>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
-  );
-}
+    const {email, password} = this.state;
+    return (
+      <MDBContainer>
+        <MDBRow>
+          <MDBCol md="12">
+            <form onSubmit={this.onSubmit}> 
+              <p className="h5 text-center mb-4">Log in</p>
+              <div className="grey-text">
+                <MDBInput
+                  label="Type your email"
+                  icon="envelope"
+                  group
+                  type="email"
+                  name = "email"
+                  validate
+                  error="wrong"
+                  success="right"
+                  value = {this.state.email}
+                  onChange={this.handleInputChange}
+                />
+                <MDBInput
+                  label="Type your password"
+                  icon="lock"
+                  group
+                  type="password"
+                  name = "password"
+                  validate
+                  error="wrong"
+                  success="right"
+                  value={this.state.password}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+              <div className="text-center">
+                <MDBBtn type = "submit">Login</MDBBtn>
+              </div>
+            </form>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+    );
+  }
 }
 export default Login;

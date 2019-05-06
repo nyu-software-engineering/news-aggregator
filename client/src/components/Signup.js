@@ -1,25 +1,39 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
+//import axios from 'axios'
 
 class FormPage extends Component {
   
   constructor(props) {
     super(props)
     this.state = {
-      name : props.name,
-      email : props.email,
-      password: props.password
+      name : "",
+      email : "",
+      password: ""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
-  handleInputChange = (event) => {
-    const { value, name } = event.target;
+  handleInputChange = (e) => {
     this.setState({
-      [name]: value
-    });
+      [e.target.name]: e.target.value
+    })
   }
 
-  onSubmit = () => {
+  /*handleSubmit = e => {
+    e.preventDefault()
+    console.log(this.state);
+    axios.post('http://localhost:9000/register',this.state)
+      .then(res => {
+        console.log(res)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }*/
+
+  onSubmit = (e) => {
+    e.preventDefault()
+    console.log(this.state);
     fetch('http://localhost:9000/register', 
     {
       mode: 'cors',
@@ -30,7 +44,7 @@ class FormPage extends Component {
       }
     })
     .then(res => res.json())
-    .then(json => {this.setState({name: json})})
+    //.then(json => {this.setState({name: json})})
     .catch(err => {
       console.error(err);
       alert('Error signing up please try again');
@@ -38,6 +52,7 @@ class FormPage extends Component {
   }
 
   render(){
+  const {name, email, password} = this.state;
   return (
     <MDBContainer>
       <MDBRow>
@@ -50,8 +65,8 @@ class FormPage extends Component {
                 icon="user"
                 group
                 type="text"
+                name = "name"
                 validate
-                id = {'todoName' + this.props.id}
                 error="wrong"
                 success="right"
                 value = {this.state.name}
@@ -62,31 +77,34 @@ class FormPage extends Component {
                 icon="envelope"
                 group
                 type="email"
+                name = "email"
                 validate
                 error="wrong"
                 success="right"
                 value = {this.state.email}
                 onInput={this.handleInputChange}
               />
-              <MDBInput
+              {/*<MDBInput
                 label="Confirm your email"
                 icon="exclamation-triangle"
                 group
                 type="text"
+                name = "email"
                 validate
                 error="wrong"
                 success="right"
                 value = {this.state.email}
-                onInput={this.handleInputChange}
-              />
+                onChange={this.handleInputChange}
+              />*/}
               <MDBInput
                 label="Your password"
                 icon="lock"
                 group
                 type="password"
+                name = "password"
                 validate
                 value = {this.state.password}
-                onInput={this.handleInputChange}
+                onChange={this.handleInputChange}
               />
             </div>
             <div className="text-center">
