@@ -50,6 +50,17 @@ app.post("/login",(req,res)=>{
 });
 
 
+app.get("/news/feed",(req,res)=>{
+    db.articleModel.find({},null,{sort:{PubDate:-1},limit:25},(err,data)=>{
+        if (err){
+            res.status(500).send({message:"error"}); 
+        }else{
+            res.send(data); 
+        }
+    })
+});
+
+
 app.get("/news/publisher/:publisher", (req,res)=>{
     db.articleModel.find({"Publisher":req.params.publisher}, null, {sort: {PubDate: -1}}, (err,data)=>{
         if(data[0]){
