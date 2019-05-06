@@ -30,9 +30,13 @@ class articleFactory{
     }
   }
 }
-for(let x in feeds){
-  feeder.add({url:feeds[x].url,refresh:5000});
+
+function add (i) {
+  setTimeout(()=>{feeder.add({url:feeds[i].url,refresh:5000})},4000*i);
 }
+for(var i in feeds){
+ add(i);
+} 
 
 //TODO: add more feeds
 
