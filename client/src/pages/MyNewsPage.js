@@ -40,14 +40,23 @@ class MyNewsPage extends React.Component {
                 <h4>News Sources</h4>
                 <MDBRow center>
                   <MDBBtnGroup vertical>
-                    <MDBBtn outline color="cyan" className="ml-0" onClick={()=>this.callAPI('http://localhost:9000/news/publisher/NYT > Business', 'NYTimes')}>NYTimes</MDBBtn>
+                    <MDBBtn outline color="cyan" className="ml-0" onClick={()=>this.callAPI('http://localhost:9000/news/publisher/NYT > Business', 'NYTimes - Business')}>NYTimes - Business</MDBBtn>
 
-                    <MDBBtn outline color="cyan" onClick={() => this.callAPI('http://localhost:9000/news/publisher/www.espn.com - NFL', 'ESPN')}>ESPN</MDBBtn>
+                    <MDBBtn outline color="cyan" onClick={()=>this.callAPI('http://localhost:9000/news/publisher/NYT > Politics', 'NYTimes - Politics')}>NYTimes - Politics</MDBBtn>
+
+                    <MDBBtn outline color="cyan" onClick={() => this.callAPI('http://localhost:9000/news/publisher/www.espn.com - NFL', 'ESPN - NFL')}>ESPN - NFL</MDBBtn>
+
+                    <MDBBtn outline color="cyan" onClick={() => this.callAPI('http://localhost:9000/news/publisher/www.espn.com - NBA', 'ESPN - NBA')}>ESPN - NBA</MDBBtn>
 
                     <MDBBtn outline color="cyan" onClick={() => this.callAPI('http://localhost:9000/news/publisher/TechCrunch', 'TechCrunch')}>TechCrunch</MDBBtn>  
 
+                    <MDBBtn outline color="cyan" onClick={() => this.callAPI('http://localhost:9000/news/publisher/Hacker News: Front Page', 'Hacker Rank')}>Hacker Rank</MDBBtn>  
+
                     <MDBBtn outline color="cyan" onClick={() => this.callAPI('http://localhost:9000/news/publisher/Reuters: Entertainment News', 'Reuters')}>Reuters</MDBBtn>  
 
+                    <MDBBtn outline color="cyan" onClick={() => this.callAPI('http://localhost:9000/news/publisher/GANNETT Syndication Service', 'USA Today Travel')}>USA Today Travel</MDBBtn>  
+
+                    <MDBBtn outline color="cyan" onClick={() => this.callAPI('http://localhost:9000/news/publisher/Real Estate', 'Washington Post - Real Estate')}>Washington Post</MDBBtn>  
                                     
                   </MDBBtnGroup>
               </MDBRow>
