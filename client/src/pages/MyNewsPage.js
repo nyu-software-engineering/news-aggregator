@@ -1,8 +1,6 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, Jumbotron, MDBBtn, MDBBtnGroup } from "mdbreact";
-import Listgroup from "../components/Listgroup";
 import Newscard from "../components/Newscard";
-import Newmodal from "../components/Newmodal";
 
 class MyNewsPage extends React.Component {
 

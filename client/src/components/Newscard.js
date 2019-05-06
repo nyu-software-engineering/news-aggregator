@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCol} from 'mdbreact';
+import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCol, MDBBtn} from 'mdbreact';
 
 class Newscard extends Component{
     render(){
@@ -13,6 +13,7 @@ class Newscard extends Component{
             <br></br>
             {this.props.source}
           </MDBCardText>
+          <MDBBtn outline color="warning" size="sm">+</MDBBtn>
         </MDBCardBody>
 
       </MDBCard>

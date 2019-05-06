@@ -56,8 +56,10 @@ render() {
                         </MDBDropdownToggle>
                         <MDBDropdownMenu>
                         <MDBDropdownItem href="https://www.nytimes.com/">NYTimes</MDBDropdownItem>
-                        <MDBDropdownItem href="https://www.wsj.com/">WSJ</MDBDropdownItem>
-                        <MDBDropdownItem href="#!">ESPN</MDBDropdownItem>
+                        <MDBDropdownItem href="http://www.espn.com/">ESPN</MDBDropdownItem>
+                        <MDBDropdownItem href="https://techcrunch.com/">TechCrunch</MDBDropdownItem>
+                        <MDBDropdownItem href="https://www.reuters.com/">Reuters</MDBDropdownItem>
+                        <MDBDropdownItem href="https://www.washingtonpost.com/">Washington Post</MDBDropdownItem>
                         </MDBDropdownMenu>
                     </MDBDropdown>
                     </MDBNavItem>
