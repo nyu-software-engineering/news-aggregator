@@ -70,7 +70,9 @@ class MyNewsPage extends React.Component {
                 <h2><strong>News Articles</strong></h2>
 
                 {items.map((item) => <div>
-                  <Newscard cardContent={<div dangerouslySetInnerHTML={ {__html: item.Summary} }></div>} 
+                  <Newscard 
+                      cardTitle = {item.Title}
+                      cardContent={<div dangerouslySetInnerHTML={ {__html: item.Summary} }></div>} 
                         
                             
                             link={item.Link} 
