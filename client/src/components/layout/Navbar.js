@@ -56,8 +56,14 @@ render() {
                         </MDBDropdownToggle>
                         <MDBDropdownMenu>
                         <MDBDropdownItem href="https://www.nytimes.com/">NYTimes</MDBDropdownItem>
-                        <MDBDropdownItem href="https://www.wsj.com/">WSJ</MDBDropdownItem>
-                        <MDBDropdownItem href="#!">ESPN</MDBDropdownItem>
+                        <MDBDropdownItem href="http://www.espn.com/">ESPN</MDBDropdownItem>
+                        <MDBDropdownItem href="https://techcrunch.com/">TechCrunch</MDBDropdownItem>
+                        <MDBDropdownItem href="https://www.reuters.com/">Reuters</MDBDropdownItem>
+                        <MDBDropdownItem href="https://www.hackerrank.com/">HackerRank</MDBDropdownItem>
+                        <MDBDropdownItem href="https://www.usatoday.com/">USA Today</MDBDropdownItem>
+                        <MDBDropdownItem href="https://www.washingtonpost.com/">Washington Post</MDBDropdownItem>
+                        <MDBDropdownItem href="https://www.cinemablend.com/">Cinema Blend</MDBDropdownItem>
+                      
                         </MDBDropdownMenu>
                     </MDBDropdown>
                     </MDBNavItem>
@@ -68,7 +74,7 @@ render() {
                     {/* <Newmodal modalContent={<Login />} modalTitle='Your Account' btnTxt='Log In'/> */}
   </MDBNavItem> 
   
-          <MDBNavItem>
+          {/* <MDBNavItem>
             <MDBDropdown>
               <MDBDropdownToggle nav caret>
                 <MDBIcon icon="user" />
@@ -80,7 +86,7 @@ render() {
                 <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
               </MDBDropdownMenu>
             </MDBDropdown>
-          </MDBNavItem>
+          </MDBNavItem> */}
                     
                 </MDBNavbarNav>
                  
