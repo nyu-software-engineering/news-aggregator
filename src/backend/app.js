@@ -51,14 +51,14 @@ app.post("/login",(req,res)=>{
 
 
 app.get("/news/publisher/:publisher", (req,res)=>{
-    db.articleModel.find({"Publisher":req.params.publisher},(err,data)=>{
+    db.articleModel.find({"Publisher":req.params.publisher}, null, {sort: {PubDate: -1}}, (err,data)=>{
         if(data[0]){
             res.send(data);
         }else if(!data[0]){
             res.status(400).send("Publisher not found"); 
         }else if(err){
             res.status(500).send(err);
-        }
+        } 
     }); 
 });
 
