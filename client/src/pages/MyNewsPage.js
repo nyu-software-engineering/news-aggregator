@@ -48,7 +48,7 @@ class MyNewsPage extends React.Component {
 
                     <MDBBtn outline color="cyan" onClick={() => this.callAPI('http://localhost:9000/news/publisher/Reuters: Entertainment News', 'Reuters')}>Reuters</MDBBtn>  
 
-                    <MDBBtn outline color="cyan" onClick={() => this.callAPI('http://localhost:9000/news/publisher/Where We Live', 'Washington Post')}>Washington Post</MDBBtn>                   
+                                    
                   </MDBBtnGroup>
               </MDBRow>
             </Jumbotron>

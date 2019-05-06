@@ -59,7 +59,7 @@ render() {
                         <MDBDropdownItem href="http://www.espn.com/">ESPN</MDBDropdownItem>
                         <MDBDropdownItem href="https://techcrunch.com/">TechCrunch</MDBDropdownItem>
                         <MDBDropdownItem href="https://www.reuters.com/">Reuters</MDBDropdownItem>
-                        <MDBDropdownItem href="https://www.washingtonpost.com/">Washington Post</MDBDropdownItem>
+                      
                         </MDBDropdownMenu>
                     </MDBDropdown>
                     </MDBNavItem>
