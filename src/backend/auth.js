@@ -19,6 +19,7 @@ module.exports = {
                 }
                 else if(resp[0]){
                     object.res.status(400).send({message:"error", reason:"username taken"});
+                    alert('username taken')
                 }else{
                     newUserDB = new db.userModel({
                         firstname:object.req.body.firstname, 
@@ -49,8 +50,10 @@ module.exports = {
                 console.log(resp[0]);
                 if(resp[0].password == object.req.body.password){
                     object.res.send({message:"success"});
+                    alert("success")
                 }else{
                     object.res.status(400).send({message:"error", reason:"username and password do not match"});
+                    alert("username and password do not match")
                 }
             }
         })

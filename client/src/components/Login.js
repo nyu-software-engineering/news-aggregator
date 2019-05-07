@@ -8,7 +8,7 @@ class Login extends Component{
   constructor(props) {
     super(props)
     this.state = {
-      email : "",
+      username : "",
       password: ""
     }
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -45,15 +45,15 @@ class Login extends Component{
       }
     })
     .then(res => res.json())
-    .then(res => console.log(res.data))
+    .then(res => console.log(res))
     .catch(err => {
-      console.error(err);
       alert('Error logging in please try again');
+      console.error(err);
     });
   }
   
   render(){
-    const {email, password} = this.state;
+    //const {email, password} = this.state;
     return (
       <MDBContainer>
         <MDBRow>
@@ -66,11 +66,11 @@ class Login extends Component{
                   icon="envelope"
                   group
                   type="email"
-                  name = "email"
+                  name = "username"
                   validate
                   error="wrong"
                   success="right"
-                  value = {this.state.email}
+                  value = {this.state.username}
                   onChange={this.handleInputChange}
                 />
                 <MDBInput

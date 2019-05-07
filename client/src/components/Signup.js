@@ -8,10 +8,11 @@ class FormPage extends Component {
     super(props)
     this.state = {
       name : "",
-      email : "",
+      username : "",
       password: ""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleInputChange = (e) => {
     this.setState({
@@ -22,11 +23,13 @@ class FormPage extends Component {
   handleSubmit = e => {
     e.preventDefault()
     console.log(this.state);
-    axios.post('http://localhost:9000/register',this.state)
+    //const {name, username, password} = this.state;
+    axios.post('http://localhost:9000/register', this.state)
+      .then(res => res.json())
       .then(res => {
         console.log(res)
+        console.log(res.data)
       })
-      .then(res => res.json())
       .catch(error => {
         console.log(error)
       })
@@ -45,20 +48,21 @@ class FormPage extends Component {
       }
     })
     .then(res => res.json())
-    .then(json => {this.setState({name: json})})
+    .then(res => console.log(res))  
+    //.then(json => {this.setState({name: json})})
     .catch(err => {
-      console.error(err);
-      alert('Error signing up please try again');
+      alert(console.log(err));
+      console.log(err);
     });
   }
 
   render(){
-  const {name, email, password} = this.state;
+  //const {name, username, password} = this.state;
   return (
     <MDBContainer>
       <MDBRow>
         <MDBCol md="12">
-          <form onSubmit = {this.handleSubmit}>
+          <form onSubmit = {this.onSubmit}>
             <p className="h5 text-center mb-4">Sign up</p>
             <div className="grey-text">
               <MDBInput
@@ -78,11 +82,11 @@ class FormPage extends Component {
                 icon="envelope"
                 group
                 type="email"
-                name = "email"
+                name = "username"
                 validate
                 error="wrong"
                 success="right"
-                value = {this.state.email}
+                value = {this.state.username}
                 onInput={this.handleInputChange}
               />
               {/*<MDBInput

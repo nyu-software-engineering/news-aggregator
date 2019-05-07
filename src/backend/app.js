@@ -11,6 +11,7 @@ const cors = require("cors");
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json())
 app.use(express.static('src/frontEnd'));
 
 
@@ -30,6 +31,7 @@ app.get("/register",(req,res)=>{
 
 
 app.post("/register",(req,res)=>{
+    console.log(req.body)
     if(!req.body.username || !req.body.password){
         return res.status(400).send({message:"error", reason:"username or pw not included with request"}); 
     }
