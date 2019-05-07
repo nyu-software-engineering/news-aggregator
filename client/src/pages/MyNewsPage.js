@@ -19,16 +19,16 @@ class MyNewsPage extends React.Component {
         .then(json => {this.setState({items: json, sources: source})})
   }
 
-  // componentDidMount() {
-  //   this.callAPI();
-  // }
+   componentDidMount() {
+    this.callAPI('http://localhost:9000/news/feed', '');
+   }
 
  
   render() {
     const regex = /(<([^>]+)>)/ig;
     const items = this.state.items;
     const source = this.state.sources;
-
+    
 
     console.log("items");
     console.log(items);
@@ -41,7 +41,10 @@ class MyNewsPage extends React.Component {
                 <h4>News Sources</h4>
                 <MDBRow center>
                   <MDBBtnGroup vertical>
-                    <MDBBtn outline color="cyan" className="ml-0" onClick={()=>this.callAPI('http://localhost:9000/news/publisher/NYT > Business', 'NYTimes - Business')}>NYTimes - Business</MDBBtn>
+
+                    <MDBBtn outline color="warning" className="ml-0" onClick={()=>this.callAPI('http://localhost:9000/news/feed', '')}>Latest</MDBBtn>
+
+                    <MDBBtn outline color="cyan" onClick={()=>this.callAPI('http://localhost:9000/news/publisher/NYT > Business', 'NYTimes - Business')}>NYTimes - Business</MDBBtn>
 
                     <MDBBtn outline color="cyan" onClick={()=>this.callAPI('http://localhost:9000/news/publisher/NYT > Politics', 'NYTimes - Politics')}>NYTimes - Politics</MDBBtn>
 
@@ -74,7 +77,7 @@ class MyNewsPage extends React.Component {
                       cardTitle = {item.Title}
                       cardContent={<div dangerouslySetInnerHTML={ {__html: item.Summary} }></div>} 
                       link={item.Link} 
-                      source={source}
+                      source={item.Publisher}
                       pubdate={item.PubDate.substring(0,10)}/> 
                             <br></br></div>)}
                     
