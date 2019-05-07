@@ -20,7 +20,7 @@ class MyNewsPage extends React.Component {
   }
 
    componentDidMount() {
-    this.callAPI('http://localhost:9000/news/feed', '');
+    this.callAPI('http://localhost:9000/news/feed', 'Latest');
    }
 
  
@@ -36,13 +36,13 @@ class MyNewsPage extends React.Component {
     return (
       <MDBContainer fluid>
         <MDBRow>
-          <MDBCol style={{width: '50%'}}>
-            <Jumbotron className="mt-3" style={{ padding: 10 }}>
+          <MDBCol md="2">
+            <Jumbotron className="mt-3" style={{ padding: 10, maxWidth: 300}}>
                 <h4>News Sources</h4>
                 <MDBRow center>
                   <MDBBtnGroup vertical>
 
-                    <MDBBtn outline color="warning" className="ml-0" onClick={()=>this.callAPI('http://localhost:9000/news/feed', '')}>Latest</MDBBtn>
+                    <MDBBtn outline color="warning" className="ml-0" onClick={()=>this.callAPI('http://localhost:9000/news/feed', 'Latest')}>Latest</MDBBtn>
 
                     <MDBBtn outline color="cyan" onClick={()=>this.callAPI('http://localhost:9000/news/publisher/NYT > Business', 'NYTimes - Business')}>NYTimes - Business</MDBBtn>
 
@@ -69,7 +69,7 @@ class MyNewsPage extends React.Component {
             </Jumbotron>
             </MDBCol>
           <MDBCol md="9">
-            <Jumbotron className="mt-3" style={{ padding: 20 }} fluid>
+            <Jumbotron className="mt-3" style={{ padding: 20 }} >
                 <h2><strong>News Articles - </strong>{source}</h2>
 
                 {items.map((item) => <div>
