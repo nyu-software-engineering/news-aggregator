@@ -92,11 +92,7 @@ app.get("/news/feedlist",(req,res)=>{
 });
 
 app.post("/save",(req,res)=>{
-    const savedArt = {
-        title:req.body.title,
-        link:req.body.link,
-        date:req.body.date
-    }
+    const savedArt = req.body;
     db.userModel.find({username:req.body.username, saved:{title:req.body.title,link:req.body.link,date:req.body.date}}, (err,resp)=>{
         if(err){
             console.log(err);

@@ -26,6 +26,10 @@ class Navbar extends Component{
 render() {
     const { collapseID } = this.state;
     const loginModal = new Newmodal('Login');
+
+    // console.log("foo");
+    // console.log(foo);
+    // const savedforlaterurl = "/savedforlater/:username=" + foo;
   return (
       <Router>
           <div className="flyname">
@@ -45,10 +49,14 @@ render() {
                     <MDBNavLink onClick={this.closeCollapse("mainNavbarCollapse")}
                     to="/mynews">My News</MDBNavLink>
                     </MDBNavItem>
+
                     <MDBNavItem>
                     <MDBNavLink onClick={this.closeCollapse("mainNavbarCollapse")}
                     to="/savedforlater">Saved for Later</MDBNavLink>
                     </MDBNavItem>
+
+
+
                     <MDBNavItem>
                     <MDBDropdown>
                         <MDBDropdownToggle nav caret>

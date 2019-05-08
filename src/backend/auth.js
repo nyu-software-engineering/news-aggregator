@@ -22,11 +22,11 @@ module.exports = {
                     alert('username taken')
                 }else{
                     newUserDB = new db.userModel({
-                        firstname:object.req.body.firstname, 
-                        lastname:object.req.body.lastname, 
+                        // firstname:object.req.body.firstname, 
+                        // lastname:object.req.body.lastname, 
                         username:object.req.body.username, 
                         password:object.req.body.password,
-                        interests:object.req.body.interests
+                        // interests:object.req.body.interests
                     });
 
                     newUserDB.save(function(){
@@ -50,7 +50,7 @@ module.exports = {
                 console.log(resp[0]);
                 if(resp[0].password == object.req.body.password){
                     object.res.send({message:"success"});
-                    alert("success")
+                    // alert("success")
                 }else{
                     object.res.status(400).send({message:"error", reason:"username and password do not match"});
                     alert("username and password do not match")

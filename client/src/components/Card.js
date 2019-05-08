@@ -19,7 +19,7 @@ const Card = () => {
           <Newmodal modalContent={<Signup/>} modalTitle='Sign Up' btnTxt='Sign Up'/>
           </MDBCol>
           <MDBCol>
-          {/* {signupModal.signUp && <Newmodal modalContent={<Signup/>} modalTitle='Sign Up' btnTxt='Sign Up'/>} */}
+         
           <Newmodal modalContent={<Login />} modalTitle='Your Account' btnTxt='Log In'/>
           </MDBCol>
           </MDBRow>

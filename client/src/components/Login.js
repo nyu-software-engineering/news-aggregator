@@ -1,6 +1,8 @@
 import React, { Component }  from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
-import axios from 'axios'
+import axios from 'axios';
+import { withRouter } from "react-router-dom";
+import Routes from "../Routes";
 
 // const Login = () => {
 class Login extends Component{
@@ -19,22 +21,23 @@ class Login extends Component{
     })
   }
 
-  handleSubmit = e => {
-    e.preventDefault()
-    console.log(this.state);
-    axios.post('http://localhost:9000/login',this.state)
-      .then(res => {
-        console.log(res)
-      })
-      .then(res => res.json())
-      .catch(error => {
-        console.log(error)
-      })
-  }
+  // handleSubmit = e => {
+  //   e.preventDefault()
+  //   console.log(this.state);
+  //   axios.post('http://localhost:9000/login',this.state)
+  //     .then(res => {
+  //       console.log(res)
+  //     })
+  //     .then(res => res.json())
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
+  // }
 
   onSubmit = (e) => {
-    e.preventDefault()
-    console.log(this.state)
+    e.preventDefault();
+    console.log(this.state);
+   
     fetch('http://localhost:9000/login', 
     {
       mode: 'cors',
@@ -50,11 +53,18 @@ class Login extends Component{
       alert('Error logging in please try again');
       console.error(err);
     });
+    this.props.history.push({
+      pathname: "/mynews"
+    });
   }
   
   render(){
     //const {email, password} = this.state;
+    const email = this.state.username;
+    console.log(email);
+
     return (
+   
       <MDBContainer>
         <MDBRow>
           <MDBCol md="12">
@@ -65,7 +75,6 @@ class Login extends Component{
                   label="Type your email"
                   icon="envelope"
                   group
-                  type="email"
                   name = "username"
                   validate
                   error="wrong"
@@ -93,7 +102,8 @@ class Login extends Component{
           </MDBCol>
         </MDBRow>
       </MDBContainer>
+      
     );
   }
 }
-export default Login;
+export default withRouter(Login);

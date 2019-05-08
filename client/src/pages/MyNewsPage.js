@@ -80,6 +80,7 @@ class MyNewsPage extends React.Component {
                       source={item.Publisher}
                       pubdate={item.PubDate.substring(0,10)}/> 
                             <br></br></div>)}
+                      
                     
             </Jumbotron>
           </MDBCol>

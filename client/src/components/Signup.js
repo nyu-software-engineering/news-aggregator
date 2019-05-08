@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
+import { withRouter } from "react-router-dom";
 import axios from 'axios'
 
 class FormPage extends Component {
@@ -7,12 +8,11 @@ class FormPage extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      name : "",
       username : "",
       password: ""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleInputChange = (e) => {
     this.setState({
@@ -20,20 +20,20 @@ class FormPage extends Component {
     })
   }
 
-  handleSubmit = e => {
-    e.preventDefault()
-    console.log(this.state);
-    //const {name, username, password} = this.state;
-    axios.post('http://localhost:9000/register', this.state)
-      .then(res => res.json())
-      .then(res => {
-        console.log(res)
-        console.log(res.data)
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }
+  // handleSubmit = e => {
+  //   e.preventDefault()
+  //   console.log(this.state);
+  //   //const {name, username, password} = this.state;
+  //   axios.post('http://localhost:9000/register', this.state)
+  //     .then(res => res.json())
+  //     .then(res => {
+  //       console.log(res)
+  //       console.log(res.data)
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
+  // }
 
   onSubmit = (e) => {
     e.preventDefault()
@@ -54,6 +54,9 @@ class FormPage extends Component {
       alert(console.log(err));
       console.log(err);
     });
+    this.props.history.push({
+      pathname: "/mynews"
+    });
   }
 
   render(){
@@ -65,7 +68,7 @@ class FormPage extends Component {
           <form onSubmit = {this.onSubmit}>
             <p className="h5 text-center mb-4">Sign up</p>
             <div className="grey-text">
-              <MDBInput
+              {/* <MDBInput
                 label="Your name"
                 icon="user"
                 group
@@ -76,7 +79,7 @@ class FormPage extends Component {
                 success="right"
                 value = {this.state.name}
                 onInput={this.handleInputChange}
-              />
+              /> */}
               <MDBInput
                 label="Your email"
                 icon="envelope"
@@ -123,4 +126,4 @@ class FormPage extends Component {
 }
 }
 
-export default FormPage;
+export default withRouter(FormPage);
