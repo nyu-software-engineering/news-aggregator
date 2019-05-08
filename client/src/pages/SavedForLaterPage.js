@@ -1,6 +1,6 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, Jumbotron, MDBBtn, MDBBtnGroup, Row, Col } from "mdbreact";
-import Newscard from "../components/Newscard";
+import Newscardsaved from "../components/Newscardsaved";
 
 class MyNewsPage extends React.Component {
 
@@ -40,7 +40,7 @@ class MyNewsPage extends React.Component {
                 <h2><strong>Saved For Later</strong></h2>
 
                 {items.map((item) => <div>
-                  <Newscard 
+                  <Newscardsaved
                     cardTitle={item.title}
                     link={item.link}
                     pubdate={item.date.substring(0,10)}
