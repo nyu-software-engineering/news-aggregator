@@ -20,6 +20,7 @@ From the perspective of the end user, the service will list available news sourc
 * Run `npm init -y`
 * Run `npm i -S concurrently`
 * Run `sudo service mongod start`
+* Run `cd src/backend`
 * Run `node app.js`
 * Run `npm start`
 
